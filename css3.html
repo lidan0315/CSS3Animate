@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        body,p,ul{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color: #447c4c;
+            color:#101010;
+        }
+        .content{
+            padding:5%;
+        }
+        .content .select{
+            width:300px;
+            height:40px;
+            margin:0 auto;
+            background-color: #fff;
+            position: relative;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+        }
+        .content .select:after{
+            content: '';
+            display: block;
+            width:10px;
+            height: 10px;
+            border-left: 1px solid #666;
+            border-bottom: 1px solid #666;
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            transform: rotate(-45deg);
+        }
+        .content .select p{
+            padding:0 15px;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        .content .select ul{
+            list-style: none;
+            background-color: #fff;
+            width: 100%;
+            position: absolute;
+            top:40px;
+            left:0;
+            overflow: auto;
+            max-height: 0;
+        }
+        .content .select ul li{
+            padding:0 15px;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        .content .select ul li:hover{
+            background-color: #e0e0e0;
+        }
+        .content .select ul li.selected{
+            background-color: #66afe9;
+        }
+        .content .select.open ul{
+            max-height: 200px;
+        }
+        .content .select.open:after{
+            transform: rotate(-225deg);
+            top:18px;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".select p").on('click',function(){
+                $(this).parent().toggleClass("open");
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="content">
+    <div class="select">
+        <p>所有项目</p>
+        <ul>
+            <li data-value="所有项目" class="selected">所有项目</li>
+            <li data-value="HTML">HTML</li>
+            <li data-value="CSS">CSS</li>
+            <li data-value="Jquery">Jquery</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
