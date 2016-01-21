@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #3dpagespace{
+            -webkit-perspective: 800px;
+            -webkit-perspective-origin: 50% 50%;
+
+            overflow: hidden;
+        }
+        .pagegroup{
+            width: 400px;
+            height: 400px;
+            margin:0 auto;
+            position: relative;
+
+            -webkit-transform-style:preserve-3d;
+        }
+        .page{
+            width: 400px;
+            height:400px;
+            line-height: 400px;
+            font-size: 400px;
+            background-color: #000;
+            text-align: center;
+            font-weight: 700;
+            color:#fff;
+
+            position: absolute;
+        }
+
+        #page1{
+            -webkit-transform-origin: bottom;
+            -webkit-transition: -webkit-transform 1s linear;
+        }
+        #page2,#page3,#page4,#page5,#page6{
+            -webkit-transform-origin: bottom;
+            -webkit-transition: -webkit-transform 1s linear;
+            -webkit-transform: rotateX(90deg);
+        }
+
+        #op{
+            text-align: center;
+            margin:40px auto;
+        }
+    </style>
+    <script type="text/javascript">
+
+        var currIndex=1;
+        function next(){
+            if(currIndex==6)
+                return;
+            var currPage=document.getElementById("page"+currIndex);
+            currPage.style.webkitTransform="rotateX(-90deg)";
+
+            currIndex++;
+            var nextPage=document.getElementById("page"+currIndex);
+            nextPage.style.webkitTransform="rotateX(0deg)";
+        }
+
+        function prev(){
+            if(currIndex==1)
+                return;
+            var currPage=document.getElementById("page"+currIndex);
+            currPage.style.webkitTransform="rotateX(90deg)";
+
+            currIndex--;
+            var prevPage=document.getElementById("page"+currIndex);
+            prevPage.style.webkitTransform="rotateX(0deg)";
+        }
+
+    </script>
+</head>
+<body>
+<div id="3dpagespace">
+    <div class="pagegroup">
+        <div class="page" id="page1">1</div>
+        <div class="page" id="page2">2</div>
+        <div class="page" id="page3">3</div>
+        <div class="page" id="page4">4</div>
+        <div class="page" id="page5">5</div>
+        <div class="page" id="page6">6</div>
+    </div>
+</div>
+<div id="op">
+    <a href="javascript:void(0)" onclick="prev()">Prev</a>
+    <a href="javascript:void(0)" onclick="next()">Next</a>
+</div>
+</body>
+</html>

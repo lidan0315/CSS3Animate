@@ -9,7 +9,7 @@
             padding:0;
         }
         body{
-            background-color: #447c4c;
+            background-color: #A1CDA8;
             color:#101010;
         }
         .content{
@@ -70,11 +70,15 @@
             top:18px;
         }
     </style>
-    <script src="js/jquery.js"></script>
+    <script src="libs/jquery/jquery.min.js"></script>
     <script type="text/javascript">
         $(function(){
-            $(".select p").on('click',function(){
+            $('.select p').on('click',function(){
                 $(this).parent().toggleClass("open");
+            })
+
+            $('.select ul li').on('click',function(){
+
             })
         })
     </script>

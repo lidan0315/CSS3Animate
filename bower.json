@@ -1,0 +1,19 @@
+{
+  "name": "personal",
+  "description": "'css3动画'",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "css3"
+  ],
+  "authors": [
+    "css3"
+  ],
+  "license": "MIT",
+  "homepage": "http://lidan.site",
+  "private": true,
+  "ignore": [],
+  "dependencies": {
+    "jquery-backstretch": "~2.0.4"
+  }
+}
